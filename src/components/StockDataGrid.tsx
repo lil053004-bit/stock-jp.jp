@@ -22,7 +22,7 @@ export default function StockDataGrid({ info, latestPrice }: StockDataGridProps)
             <div key={rowIndex} className="grid grid-cols-2 gap-x-16">
               {dataItems.slice(rowIndex * 2, rowIndex * 2 + 2).map((item, index) => (
                 <div key={index} className="flex items-center gap-1">
-                  <div className="text-base font-medium text-left" style={{ color: '#384860' }}>
+                  <div className="text-base font-medium text-left" style={{ color: '#3c0800' }}>
                     {item.label}
                   </div>
                   <div className="text-2xl font-bold text-left" style={{ color: item.color }}>

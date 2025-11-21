@@ -39,7 +39,7 @@
   body {
     @apply text-gray-200 min-h-screen;
     overflow-x: hidden;
-    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+    font-family: 'HiraKakuPro-W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: url('/back.png') repeat;
