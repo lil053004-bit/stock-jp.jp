@@ -162,19 +162,18 @@ export default function Contact() {
                 電話でのお問い合わせ
               </h3>
               <p className="text-sm text-gray-700 mb-2">
-                岩瀬朗<br />Akira Iwase
+                株式会社ネクストスフィア<br />NextSphere Co., Ltd.
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                株式会社メディアエクシード<br />Media Exceed Co., Ltd.
+                〒160-6135<br />
+                東京都新宿区西新宿8丁目17-1<br />
+                住友不動産新宿グランドタワー 35階
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                〒060‑0061<br />北海道札幌市中央区南1条西2丁目5 南一条Kビル4F
+                <strong>電話番号:</strong> 03-5944-8231
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>電話番号:</strong> 011‑596‑0130
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                <strong>メールアドレス:</strong> support@stock-jp.jp
+                <strong>メールアドレス:</strong> support@stocktrends.jp
               </p>
               <p className="text-sm text-gray-700">
                 <strong>受付時間:</strong> 平日 9:00-18:00

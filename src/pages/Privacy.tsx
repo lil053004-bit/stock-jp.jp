@@ -27,7 +27,7 @@ export default function Privacy() {
             <section className="mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">1. 基本方針</h2>
               <p className="text-gray-700 leading-relaxed">
-                AI株式診断サービス（以下「当サービス」）の運営者である株式会社集英社インターナショナル（以下「当社」）は、利用者の個人情報の重要性を認識し、
+                AI株式診断サービス（以下「当サービス」）の運営者である株式会社ネクストスフィア（以下「当社」）は、利用者の個人情報の重要性を認識し、
                 個人情報の保護に関する法律（個人情報保護法）を遵守し、適切に取り扱い、保護することに努めます。
               </p>
             </section>
@@ -140,21 +140,19 @@ export default function Privacy() {
                 本ポリシーに関するご質問、個人情報の取り扱いに関するご相談は、お問い合わせフォームよりご連絡ください。
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>岩瀬朗</strong><br />
-                <strong>Akira Iwase</strong>
+                <strong>株式会社ネクストスフィア</strong><br />
+                <strong>NextSphere Co., Ltd.</strong>
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>株式会社メディアエクシード</strong><br />
-                <strong>Media Exceed Co., Ltd.</strong>
+                〒160-6135<br />
+                東京都新宿区西新宿8丁目17-1<br />
+                住友不動産新宿グランドタワー 35階
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                〒060‑0061<br />北海道札幌市中央区南1条西2丁目5 南一条Kビル4F
+                メール: support@stocktrends.jp
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                メール: support@stock-jp.jp
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                電話: 011‑596‑0130
+                電話: 03-5944-8231
               </p>
               <p className="text-sm text-gray-700">
                 受付時間: 平日 9:00-18:00（土日祝日を除く）

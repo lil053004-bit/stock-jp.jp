@@ -84,10 +84,10 @@ export default function Footer() {
           </li>
           <li className="flex items-center gap-1 mt-3" style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
             <Phone className="w-3 h-3" />
-            <span>03-5211-2632</span>
+            <span>03-5944-8231</span>
           </li>
           <li style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
-            support@perfectstocks.jp
+            support@stocktrends.jp
           </li>
           <li className="text-xs" style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
             受付時間: 平日 9:00-18:00
@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Copyright Section */}
         <div className="border-t border-blue-500/20 pt-4 text-center">
         <p className="text-xs sm:text-sm mb-2 font-medium" style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
-          &copy; {currentYear} 株式会社集英社インターナショナル. All rights reserved.
+          &copy; {currentYear} 株式会社ネクストスフィア (NextSphere Co., Ltd.). All rights reserved.
         </p>
         <p className="text-[10px] sm:text-xs leading-relaxed max-w-3xl mx-auto" style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
           当サイトで提供される情報は投資勧誘を目的としたものではありません。
