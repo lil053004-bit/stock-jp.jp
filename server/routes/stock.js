@@ -121,6 +121,7 @@ router.get('/data', async (req, res) => {
       per: stockInfo.per,
       pbr: stockInfo.pbr,
       dividend: stockInfo.dividend,
+      code: stockInfo.code,
     }));
 
     const data = {
