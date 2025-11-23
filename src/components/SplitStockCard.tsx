@@ -122,14 +122,12 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 className="w-32 h-auto"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-                <div className="text-2xl font-bold text-white" style={{ lineHeight: '1.2' }}>
+                <div className="text-2xl font-bold text-white mb-0.5" style={{ lineHeight: '1.2' }}>
                   {info.price}
                 </div>
-                <div className="text-xs font-medium text-white mt-1">
-                  {info.change}
-                </div>
-                <div className="text-xs font-medium text-white">
-                  {info.changePercent}
+                <div className="flex items-center gap-1 text-xs font-medium text-white">
+                  <span>{info.change}</span>
+                  <span>{info.changePercent}</span>
                 </div>
               </div>
             </div>
