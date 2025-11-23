@@ -10,7 +10,7 @@ export default function Footer() {
 
         {/* Legal Documents Links */}
         <div className="mb-8 pt-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 max-w-4xl mx-auto">
             <Link
               to="/disclaimer"
               className="inline-flex items-center gap-1 hover:underline font-semibold text-red-700 text-xs sm:text-sm justify-center"
