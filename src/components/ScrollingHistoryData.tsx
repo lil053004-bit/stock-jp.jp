@@ -108,7 +108,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   return (
     <div className="px-4 py-6">
       <div className="max-w-lg mx-auto">
-        <div className="relative w-full overflow-hidden" style={{ height: '300px' }}>
+        <div className="relative w-full overflow-hidden" style={{ height: '210px' }}>
           <div className="absolute inset-0">
             {renderGroup(visiblePrices, 'current')}
             {prices.length > 1 && renderGroup(nextPrices, 'next')}
