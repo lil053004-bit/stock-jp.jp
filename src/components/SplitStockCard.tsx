@@ -31,7 +31,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
             className="w-full rounded-lg overflow-hidden relative"
             style={{
               backgroundImage: 'url(/stock.png)',
-              backgroundSize: 'cover',
+              backgroundSize: '100% 100%',
               backgroundPosition: 'center',
               minHeight: '280px',
               padding: '20px'
