@@ -42,8 +42,8 @@
     font-family: 'HiraKakuPro-W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: url('/background.png') no-repeat center center fixed;
-    background-size: contain;
+    background: url('/background.png') no-repeat center top;
+    background-size: 100% auto;
   }
 
   * {
