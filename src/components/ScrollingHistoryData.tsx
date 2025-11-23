@@ -18,8 +18,8 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % prices.length);
         setIsAnimating(false);
-      }, 800);
-    }, 3000);
+      }, 600);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [prices.length]);
@@ -28,25 +28,11 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     return null;
   }
 
-  // 获取当前显示的3个条目
   const visiblePrices = [
     prices[currentIndex % prices.length],
     prices[(currentIndex + 1) % prices.length],
     prices[(currentIndex + 2) % prices.length]
   ];
-
-  // 获取下一组的3个条目（用于动画）
-  const nextPrices = [
-    prices[(currentIndex + 1) % prices.length],
-    prices[(currentIndex + 2) % prices.length],
-    prices[(currentIndex + 3) % prices.length]
-  ];
-
-  const formatChange = (change: string, changePercent: string) => {
-    const changeNum = parseFloat(change);
-    const sign = changeNum >= 0 ? '+' : '';
-    return `${sign}${change} (${changePercent}%)`;
-  };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -81,37 +67,21 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     );
   };
 
-  const renderGroup = (priceGroup: StockPrice[], position: 'current' | 'next') => {
-    const baseStyle = {
-      width: '100%',
-      transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out'
-    };
-
-    const positionStyle = position === 'current'
-      ? (isAnimating
-          ? { transform: 'translate(-50%, -150%)', opacity: 0 }
-          : { transform: 'translate(-50%, -50%)', opacity: 1 })
-      : (isAnimating
-          ? { transform: 'translate(-50%, -50%)', opacity: 1 }
-          : { transform: 'translate(-50%, 50%)', opacity: 0 });
-
-    return (
-      <div
-        className="absolute top-1/2 left-1/2"
-        style={{ ...baseStyle, ...positionStyle }}
-      >
-        {priceGroup.map((price, idx) => renderPriceItem(price, idx))}
-      </div>
-    );
-  };
-
   return (
     <div className="px-4 py-6">
       <div className="max-w-lg mx-auto">
         <div className="relative w-full overflow-hidden" style={{ height: '210px' }}>
-          <div className="absolute inset-0">
-            {renderGroup(visiblePrices, 'current')}
-            {prices.length > 1 && renderGroup(nextPrices, 'next')}
+          <div
+            className="absolute inset-0 transition-transform duration-600 ease-in-out"
+            style={{
+              transform: `translateY(-${(currentIndex % prices.length) * 70}px)`
+            }}
+          >
+            {prices.concat(prices.slice(0, 2)).map((price, idx) => (
+              <div key={`${price.date}-${idx}`} style={{ height: '70px' }}>
+                {renderPriceItem(price, idx)}
+              </div>
+            ))}
           </div>
         </div>
 

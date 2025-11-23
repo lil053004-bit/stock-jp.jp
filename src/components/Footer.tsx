@@ -17,7 +17,7 @@ export default function Footer() {
               style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               <AlertTriangle className="w-3 h-3" />
-              免責事項【必読】
+              免責事項
             </Link>
             <Link
               to="/terms"
@@ -31,21 +31,21 @@ export default function Footer() {
               className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
-              プライバシーポリシー <ExternalLink className="w-3 h-3" />
+              プライバシー <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/specified-commercial-transaction-act"
               className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
-              特定商取引法表記 <ExternalLink className="w-3 h-3" />
+              特商法表記 <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/company-nature"
               className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
-              会社概要・サービス性質 <ExternalLink className="w-3 h-3" />
+              会社概要 <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/contact"
@@ -59,7 +59,7 @@ export default function Footer() {
               className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
-              よくある質問 <ExternalLink className="w-3 h-3" />
+              FAQ <ExternalLink className="w-3 h-3" />
             </Link>
           </div>
         </div>
