@@ -75,6 +75,10 @@
   body[data-modal-open] > div > header {
     display: none !important;
   }
+
+  .footer-bg {
+    background-color: #f6e2d9;
+  }
 }
 
 @layer utilities {
