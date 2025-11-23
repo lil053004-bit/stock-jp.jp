@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import AIProcessFlow from './components/AIProcessFlow';
 import ParticleBackground from './components/ParticleBackground';
 import ModernBackground from './components/ModernBackground';
+import StockWaterfallBackground from './components/StockWaterfallBackground';
 import ProtectedRoute from './components/ProtectedRoute';
 import ApiStatsDisplay from './components/ApiStatsDisplay';
 import NewHome from './pages/NewHome';
@@ -20,12 +21,16 @@ import AdminDashboard from './pages/AdminDashboard';
 import { initializeGoogleTracking } from './lib/googleTracking';
 
 function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   useEffect(() => {
     initializeGoogleTracking();
   }, []);
 
   return (
     <ModernBackground>
+      {isHomePage && <StockWaterfallBackground />}
       <ParticleBackground />
       <div className="relative z-10">
         <Routes>

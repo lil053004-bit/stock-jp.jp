@@ -79,9 +79,50 @@
   .footer-bg {
     background-color: #f6e2d9;
   }
+
+  .stock-waterfall-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .stock-waterfall-item {
+    position: absolute;
+    bottom: -50px;
+    color: #e0e0e0;
+    font-family: 'HiraKakuPro-W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
+    font-weight: 300;
+    white-space: nowrap;
+    animation: stock-waterfall-float linear infinite;
+    will-change: transform;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    filter: blur(0.3px);
+  }
 }
 
 @layer utilities {
+  @keyframes stock-waterfall-float {
+    0% {
+      transform: translateY(0) translateZ(0);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateZ(0);
+      opacity: 0;
+    }
+  }
+
   @keyframes shimmer {
     0% {
       opacity: 0;
@@ -417,7 +458,8 @@
     .animate-icon-float,
     .animate-arrow-flow,
     .animate-sparkle,
-    .animate-glow-pulse {
+    .animate-glow-pulse,
+    .stock-waterfall-item {
       animation: none;
     }
   }
