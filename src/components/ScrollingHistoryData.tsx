@@ -57,20 +57,19 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
   const renderPriceItem = (price: StockPrice, index: number) => {
     return (
-      <div
-        key={`${price.date}-${index}`}
-        className="mb-2 last:mb-0"
-        style={{
-          backgroundImage: 'url(/slider.png)',
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          padding: '8px 12px'
-        }}
-      >
-        <div className="text-sm text-black">
+      <div key={`${price.date}-${index}`} className="mb-2 last:mb-0">
+        <div className="text-sm text-black pl-3">
           {price.code} {formatDate(price.date)}
         </div>
-        <div className="flex items-center gap-2 text-sm">
+        <div
+          className="flex items-center gap-2 text-sm"
+          style={{
+            backgroundImage: 'url(/slider.png)',
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            padding: '8px 12px'
+          }}
+        >
           <span className="text-black">終値：</span>
           <span className="text-red-600">{price.close}</span>
           <span className="text-black">{stockName.slice(0, 4)}</span>
