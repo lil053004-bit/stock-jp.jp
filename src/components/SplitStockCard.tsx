@@ -85,7 +85,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 </span>
               </div>
 
-              <div className="flex items-baseline gap-2 col-span-2">
+              <div className="flex items-baseline gap-2">
                 <span className="text-sm font-bold" style={{
                   color: '#dc2626',
                   textShadow: '0 0 3px rgba(255, 255, 255, 0.8), 1px 1px 2px rgba(255, 255, 255, 0.6)'
@@ -97,7 +97,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 </span>
               </div>
 
-              <div className="flex items-baseline gap-2 col-span-2">
+              <div className="flex items-baseline gap-2">
                 <span className="text-sm font-bold" style={{
                   color: '#dc2626',
                   textShadow: '0 0 3px rgba(255, 255, 255, 0.8), 1px 1px 2px rgba(255, 255, 255, 0.6)'
