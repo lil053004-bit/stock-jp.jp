@@ -56,21 +56,27 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   };
 
   const renderPriceItem = (price: StockPrice, index: number) => {
-    const changeNum = parseFloat(price.change);
-    const changeColor = changeNum >= 0 ? '#c6e48b' : '#ff6b6b';
-
     return (
-      <div key={`${price.date}-${index}`} className="mb-3 last:mb-0">
-        <div className="text-white font-bold text-base mb-0.5">
-          株-{price.code || stockName.slice(0, 4)} {formatDate(price.date)}
+      <div
+        key={`${price.date}-${index}`}
+        className="mb-2 last:mb-0"
+        style={{
+          backgroundImage: 'url(/slider.png)',
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'center',
+          padding: '8px 12px'
+        }}
+      >
+        <div className="text-sm text-black">
+          {price.code} {formatDate(price.date)}
         </div>
-        <div className="text-xs" style={{ color: changeColor }}>
-          <span className="font-medium text-white">終値：</span>
-          <span className="font-bold">{price.close}</span>
-        </div>
-        <div className="text-xs" style={{ color: changeColor }}>
-          <span className="font-medium text-white">前日比：</span>
-          <span className="font-bold">{formatChange(price.change, price.changePercent)}</span>
+        <div className="flex items-center gap-2 text-sm">
+          <span className="text-black">終値：</span>
+          <span className="text-red-600">{price.close}</span>
+          <span className="text-black">{stockName.slice(0, 4)}</span>
+          <span className="text-black">前日比：</span>
+          <span className="text-red-600">{price.change}</span>
+          <span className="text-red-600">{price.changePercent}%</span>
         </div>
       </div>
     );
@@ -78,7 +84,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
   const renderGroup = (priceGroup: StockPrice[], position: 'current' | 'next') => {
     const baseStyle = {
-      width: '70%',
+      width: '100%',
       transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out'
     };
 
@@ -92,7 +98,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
     return (
       <div
-        className="absolute top-1/2 left-1/2 text-center"
+        className="absolute top-1/2 left-1/2"
         style={{ ...baseStyle, ...positionStyle }}
       >
         {priceGroup.map((price, idx) => renderPriceItem(price, idx))}
@@ -103,52 +109,8 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   return (
     <div className="px-4 py-6">
       <div className="max-w-lg mx-auto">
-        <div className="relative w-full overflow-hidden" style={{ paddingBottom: '120%' }}>
+        <div className="relative w-full overflow-hidden" style={{ height: '300px' }}>
           <div className="absolute inset-0">
-            <img
-              src="/stock.png"
-              alt="Stock background"
-              className="w-full h-full object-contain"
-            />
-
-            <div className="absolute top-[3%] left-[3%] w-[15%] h-[15%]">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <circle cx="50" cy="50" r="45" fill="#8B4513" opacity="0.8"/>
-                <circle cx="50" cy="50" r="35" fill="#D2691E" opacity="0.6"/>
-                <circle cx="50" cy="50" r="25" fill="#FFD700" opacity="0.4"/>
-                {[...Array(12)].map((_, i) => (
-                  <line
-                    key={i}
-                    x1="50"
-                    y1="50"
-                    x2={50 + 40 * Math.cos((i * 30 * Math.PI) / 180)}
-                    y2={50 + 40 * Math.sin((i * 30 * Math.PI) / 180)}
-                    stroke="#FFD700"
-                    strokeWidth="1"
-                  />
-                ))}
-              </svg>
-            </div>
-
-            <div className="absolute bottom-[3%] right-[3%] w-[15%] h-[15%]">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <circle cx="50" cy="50" r="45" fill="#8B4513" opacity="0.8"/>
-                <circle cx="50" cy="50" r="35" fill="#D2691E" opacity="0.6"/>
-                <circle cx="50" cy="50" r="25" fill="#FFD700" opacity="0.4"/>
-                {[...Array(12)].map((_, i) => (
-                  <line
-                    key={i}
-                    x1="50"
-                    y1="50"
-                    x2={50 + 40 * Math.cos((i * 30 * Math.PI) / 180)}
-                    y2={50 + 40 * Math.sin((i * 30 * Math.PI) / 180)}
-                    stroke="#FFD700"
-                    strokeWidth="1"
-                  />
-                ))}
-              </svg>
-            </div>
-
             {renderGroup(visiblePrices, 'current')}
             {prices.length > 1 && renderGroup(nextPrices, 'next')}
           </div>
