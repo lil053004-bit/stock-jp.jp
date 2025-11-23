@@ -5,6 +5,7 @@ import AIProcessFlow from './components/AIProcessFlow';
 import ParticleBackground from './components/ParticleBackground';
 import ModernBackground from './components/ModernBackground';
 import ProtectedRoute from './components/ProtectedRoute';
+import ApiStatsDisplay from './components/ApiStatsDisplay';
 import NewHome from './pages/NewHome';
 import Contact from './pages/Contact';
 import Disclaimer from './pages/Disclaimer';
@@ -51,6 +52,7 @@ function App() {
         </Routes>
         <AIProcessFlow />
         <Footer />
+        <ApiStatsDisplay />
       </div>
     </ModernBackground>
   );

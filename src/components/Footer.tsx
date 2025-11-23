@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ExternalLink, AlertTriangle, Activity } from 'lucide-react';
+import { ExternalLink, AlertTriangle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,33 +8,8 @@ export default function Footer() {
     <footer className="relative z-20 border-t-2 border-blue-500/30 mt-0">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-8">
 
-        {/* Quick Link to API Stats & Compliance Info */}
-        <div className="mb-8 bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-300 rounded-lg p-4">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <Activity className="w-6 h-6 text-blue-600" />
-              <div>
-                <h3 className="font-bold text-gray-900 text-sm sm:text-base" style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
-                  API統計・FSA合規情報
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}>
-                  当サービスの運用状況と重要な金融庁関連情報をご確認いただけます
-                </p>
-              </div>
-            </div>
-            <Link
-              to="/api-stats"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-semibold"
-              style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
-            >
-              詳細を見る
-              <ExternalLink className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-
         {/* Legal Documents Links */}
-        <div className="mb-8 pt-6 border-t border-gray-200">
+        <div className="mb-8 pt-6">
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               to="/disclaimer"
@@ -71,14 +46,6 @@ export default function Footer() {
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               会社概要・サービス性質 <ExternalLink className="w-3 h-3" />
-            </Link>
-            <Link
-              to="/api-stats"
-              className="inline-flex items-center gap-1 hover:underline font-semibold text-blue-700 text-xs sm:text-sm"
-              style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
-            >
-              <Activity className="w-3 h-3" />
-              API統計・合規情報
             </Link>
             <Link
               to="/contact"
