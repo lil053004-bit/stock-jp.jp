@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import SplitStockCard from '../components/SplitStockCard';
 import PulsingButton from '../components/PulsingButton';
@@ -12,6 +13,7 @@ import { useUrlParams } from '../hooks/useUrlParams';
 import { apiClient } from '../lib/apiClient';
 import { userTracking } from '../lib/userTracking';
 import { trackDiagnosisClick, trackConversionClick } from '../lib/googleTracking';
+import { Activity, Shield } from 'lucide-react';
 
 const getDefaultStockData = (code: string): StockData => ({
   info: {
@@ -376,6 +378,34 @@ export default function NewHome() {
             />
 
             <CircularAnalysisNav />
+
+            <div className="max-w-4xl mx-auto px-4 py-8 my-8">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-xl p-6 sm:p-8 border-2 border-blue-300">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                      サービスの透明性について
+                    </h3>
+                    <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                      当サービスのAPI運用状況と金融庁（FSA）関連の重要な合規情報を公開しています。
+                      投資判断を行う際の参考情報として、ぜひご確認ください。
+                    </p>
+                    <Link
+                      to="/api-stats"
+                      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl"
+                    >
+                      <Activity className="w-5 h-5" />
+                      API統計・FSA合規情報を見る
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
 

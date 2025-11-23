@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Activity, Database, Zap, TrendingUp, AlertTriangle, Building2, ExternalLink } from 'lucide-react';
 import { apiClient } from '../lib/apiClient';
 
@@ -257,7 +258,7 @@ export default function ApiStatsDisplay() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600">
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600 mb-4">
                     <h4 className="text-sm font-bold text-gray-200 mb-2">関連監督機関・情報源</h4>
                     <p className="text-xs text-gray-300 mb-2 leading-relaxed">
                       投資判断を行う際は、金融庁に登録された金融商品取引業者にご相談されることをお勧めします。
@@ -292,6 +293,17 @@ export default function ApiStatsDisplay() {
                       </a>
                     </div>
                   </div>
+
+                  <Link
+                    to="/api-stats"
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all shadow-lg hover:shadow-xl text-center"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <ExternalLink className="w-4 h-4" />
+                      完全な統計・合規情報ページを見る
+                    </span>
+                  </Link>
                 </section>
               </div>
             </div>
