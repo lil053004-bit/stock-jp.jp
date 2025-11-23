@@ -10,10 +10,10 @@ export default function Footer() {
 
         {/* Legal Documents Links */}
         <div className="mb-8 pt-6">
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto">
             <Link
               to="/disclaimer"
-              className="inline-flex items-center gap-1 hover:underline font-semibold text-red-700 text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline font-semibold text-red-700 text-xs sm:text-sm justify-center"
               style={{ fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               <AlertTriangle className="w-3 h-3" />
@@ -21,42 +21,42 @@ export default function Footer() {
             </Link>
             <Link
               to="/terms"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               利用規約 <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/privacy"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               プライバシーポリシー <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/specified-commercial-transaction-act"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               特定商取引法表記 <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/company-nature"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               会社概要・サービス性質 <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               お問い合わせ <ExternalLink className="w-3 h-3" />
             </Link>
             <Link
               to="/faq"
-              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 hover:underline text-xs sm:text-sm justify-center"
               style={{ color: '#3c0800', fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif' }}
             >
               よくある質問 <ExternalLink className="w-3 h-3" />
