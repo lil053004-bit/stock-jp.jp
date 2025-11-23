@@ -33,7 +33,6 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
               backgroundImage: 'url(/stock.png)',
               backgroundSize: '100% 100%',
               backgroundPosition: 'center',
-              minHeight: '280px',
               padding: '20px'
             }}
           >
