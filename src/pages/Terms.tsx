@@ -36,8 +36,18 @@ export default function Terms() {
 
             <section className="mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">第2条（サービスの内容）</h2>
+
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                <p className="text-blue-900 font-bold mb-2">運営会社の事業分類</p>
+                <p className="text-gray-700 leading-relaxed">
+                  株式会社ネクストスフィアは、<strong>広告代理業およびインターネット情報提供サービス</strong>を主要事業とする企業です。
+                  当社は金融商品取引業者ではなく、金融サービスの提供を行う企業ではありません。
+                </p>
+              </div>
+
               <p className="text-gray-700 leading-relaxed mb-3">
-                当サービスは、AI技術を活用して株式市場の情報を分析し、利用者に提供する情報提供サービスです。
+                当サービスは、AI技術を活用して株式市場の情報を分析し、利用者に提供する<strong>情報提供サービス</strong>です。
+                本サービスは<strong>広告収益により運営</strong>されており、利用者の皆様には<strong>完全無料</strong>でご提供しています。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 当サービスは以下の機能を提供します：
@@ -48,6 +58,9 @@ export default function Terms() {
                 <li>AIによる株式分析レポートの生成</li>
                 <li>市場データの集計および統計情報の提供</li>
               </ul>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                当社は証券取引手数料、投資助言料、運用報酬等の金融関連収入は一切受領しておりません。
+              </p>
             </section>
 
             <section className="mb-8">
@@ -134,6 +147,33 @@ export default function Terms() {
               <p className="text-gray-700 leading-relaxed">
                 当サービスに関して紛争が生じた場合には、東京地方裁判所を専属的合意管轄裁判所とします。
               </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">第11条（関連監督機関）</h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                当サービスは情報提供のみを目的としており、金融庁の登録を必要とする業務は行っておりません。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                投資判断を行う際は、以下の機関にご相談されることをお勧めします：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>
+                  <a href="https://www.fsa.go.jp/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    金融庁（Financial Services Agency）
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.jsda.or.jp/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    日本証券業協会（JSDA）
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.fsa.go.jp/ordinary/kinyusyohin/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    登録金融商品取引業者検索
+                  </a>
+                </li>
+              </ul>
             </section>
 
             <div className="bg-slate-100 rounded-lg p-6 mt-8">

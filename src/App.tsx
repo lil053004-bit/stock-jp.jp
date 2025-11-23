@@ -12,6 +12,7 @@ import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import SpecifiedCommercialTransactionAct from './pages/SpecifiedCommercialTransactionAct';
+import CompanyNature from './pages/CompanyNature';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { initializeGoogleTracking } from './lib/googleTracking';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/specified-commercial-transaction-act" element={<SpecifiedCommercialTransactionAct />} />
+          <Route path="/company-nature" element={<CompanyNature />} />
 
           {/* Admin Routes */}
           <Route path="/adsadmin" element={<AdminLogin />} />

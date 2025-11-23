@@ -34,8 +34,18 @@ export default function Disclaimer() {
 
             <section className="mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">1. サービスの性質について</h2>
+
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                <p className="text-blue-900 font-bold mb-2">運営会社の事業分類</p>
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>株式会社ネクストスフィアは、広告代理業およびインターネット情報提供サービスを事業とする企業です。</strong>
+                  当社は金融商品取引業者ではなく、金融サービスの提供を行う企業ではありません。
+                </p>
+              </div>
+
               <p className="text-gray-700 leading-relaxed mb-3">
                 AI株式診断サービス（以下「当サービス」）は、AI技術を活用した株式情報の提供および分析ツールです。
+                本サービスは<strong>広告収益により運営</strong>されており、ユーザーの皆様には<strong>完全無料</strong>でご提供しています。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 当サービスは以下の業務には該当しません：
@@ -45,10 +55,15 @@ export default function Disclaimer() {
                 <li>投資一任業務</li>
                 <li>金融商品仲介業務</li>
                 <li>証券取引の勧誘行為</li>
+                <li>資産運用代行業務</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mt-3">
                 当サービス運営者は、金融商品取引業者（投資助言・代理業、投資運用業等）ではありません。
-                金融商品取引法第29条の登録を受けた事業者ではないため、個別の投資助言を行うことはできません。
+                <strong>金融商品取引法第29条の登録を受けた事業者ではないため</strong>、個別の投資助言を行うことはできません。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                当社は証券取引手数料、投資助言料、運用報酬等の金融関連収入は一切受領しておりません。
+                収益源は広告表示による広告収入のみです。
               </p>
             </section>
 
@@ -139,6 +154,33 @@ export default function Disclaimer() {
               <p className="text-gray-700 leading-relaxed">
                 当社は、必要に応じて本免責事項を変更することができます。
                 変更後の免責事項は、当サービス上に掲載された時点から効力を生じるものとします。
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">9. 関連監督機関について</h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                投資判断を行う際は、以下の機関にご相談されることをお勧めします：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>
+                  <a href="https://www.fsa.go.jp/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    金融庁（Financial Services Agency）
+                  </a> - 日本の金融監督機関
+                </li>
+                <li>
+                  <a href="https://www.jsda.or.jp/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    日本証券業協会（JSDA）
+                  </a> - 証券会社の自主規制機関
+                </li>
+                <li>
+                  <a href="https://www.fsa.go.jp/ordinary/kinyusyohin/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    登録金融商品取引業者検索
+                  </a> - 金融庁登録業者の検索システム
+                </li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                実際に投資を行う際は、金融商品取引法に基づき登録された投資助言業者または証券会社等の金融商品取引業者にご相談ください。
               </p>
             </section>
 
