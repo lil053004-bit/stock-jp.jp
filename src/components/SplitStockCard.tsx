@@ -18,7 +18,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
           }}>
             {info.name}
           </div>
-          <div className="text-base font-medium mt-1" style={{
+          <div className="text-base font-medium" style={{
             color: '#3c0800',
             fontFamily: 'HiraKakuPro-W3, Hiragino Kaku Gothic Pro, sans-serif'
           }}>
@@ -33,11 +33,11 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
               backgroundImage: 'url(/stock.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              minHeight: '200px',
+              minHeight: '280px',
               padding: '20px'
             }}
           >
-            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-2">
               <div className="flex items-baseline gap-2">
                 <span className="text-sm font-bold" style={{
                   color: '#dc2626',
@@ -113,7 +113,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
           </div>
 
           <div
-            className="absolute -top-12 right-4"
+            className="absolute -top-6 right-4"
             style={{ zIndex: 10 }}
           >
             <div className="relative">
