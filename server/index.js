@@ -70,6 +70,53 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy',
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; " +
+    "style-src 'self' 'unsafe-inline'; " +
+    "img-src 'self' data: https:; " +
+    "font-src 'self' data:; " +
+    "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; " +
+    "frame-ancestors 'none'; " +
+    "base-uri 'self'; " +
+    "form-action 'self'"
+  );
+
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  if (NODE_ENV === 'production') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  }
+
+  next();
+});
+
+app.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.url} - IP: ${req.ip}`);
+  next();
+});
+
+app.use((req, res, next) => {
+  const suspiciousPatterns = [
+    /\.\./,
+    /<script/i,
+    /union.*select/i,
+  ];
+
+  const fullUrl = req.url;
+  if (suspiciousPatterns.some(pattern => pattern.test(fullUrl))) {
+    console.warn(`[SECURITY] Suspicious request blocked: ${fullUrl} from ${req.ip}`);
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  next();
+});
+
 app.use('/api/stock', stockRouter);
 app.use('/api/gemini', geminiRouter);
 app.use('/api/admin', adminRouter);

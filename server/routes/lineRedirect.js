@@ -14,6 +14,24 @@ function isValidUrl(urlString) {
   }
 }
 
+function isWhitelistedDomain(urlString) {
+  try {
+    const url = new URL(urlString);
+    const allowedDomains = [
+      'line.me',
+      'liff.line.me',
+      'lin.ee',
+      'stocktrends.jp',
+      'localhost',
+    ];
+    return allowedDomains.some(domain =>
+      url.hostname === domain || url.hostname.endsWith('.' + domain)
+    );
+  } catch {
+    return false;
+  }
+}
+
 router.get('/', authMiddleware, (req, res) => {
   res.set({
     'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
@@ -48,6 +66,10 @@ router.post('/', authMiddleware, (req, res) => {
 
     if (!redirect_url || !isValidUrl(redirect_url)) {
       return res.status(400).json({ success: false, error: 'Invalid URL format. Please provide a valid http or https URL.' });
+    }
+
+    if (!isWhitelistedDomain(redirect_url)) {
+      return res.status(400).json({ success: false, error: 'URL domain not in whitelist. Only LINE and approved domains are allowed.' });
     }
 
     if (weight < 1 || weight > 100) {
@@ -95,6 +117,10 @@ router.put('/:id', authMiddleware, (req, res) => {
 
     if (redirect_url && !isValidUrl(redirect_url)) {
       return res.status(400).json({ success: false, error: 'Invalid URL format. Please provide a valid http or https URL.' });
+    }
+
+    if (redirect_url && !isWhitelistedDomain(redirect_url)) {
+      return res.status(400).json({ success: false, error: 'URL domain not in whitelist. Only LINE and approved domains are allowed.' });
     }
 
     if (weight !== undefined && (weight < 1 || weight > 100)) {
