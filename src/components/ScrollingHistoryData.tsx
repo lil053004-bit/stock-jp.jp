@@ -35,10 +35,26 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   ];
 
   const formatDate = (dateString: string) => {
+    if (!dateString) return '';
+
+    const slashMatch = dateString.match(/^(\d+)\/(\d+)/);
+    if (slashMatch) {
+      return `${slashMatch[1]}/${slashMatch[2]}`;
+    }
+
+    const japaneseMatch = dateString.match(/(\d+)月(\d+)日/);
+    if (japaneseMatch) {
+      return `${japaneseMatch[1]}/${japaneseMatch[2]}`;
+    }
+
     const date = new Date(dateString);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return `${month}/${day}`;
+    if (!isNaN(date.getTime())) {
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      return `${month}/${day}`;
+    }
+
+    return dateString;
   };
 
   const renderPriceItem = (price: StockPrice, index: number) => {
